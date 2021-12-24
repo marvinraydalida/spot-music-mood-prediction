@@ -1,0 +1,1 @@
+const get = document.getElementsByTagName("h1")

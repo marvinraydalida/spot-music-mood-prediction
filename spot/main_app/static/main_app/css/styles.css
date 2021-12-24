@@ -1,0 +1,124 @@
+:root{
+    --bg-color: #121212;
+    --card-bg: #171717;
+    --nav-icon-color: #009C4D;
+    --font-regular: 'Nunito';
+    --search-bg: #E9E9E9;
+    --track-name-color: #ECECEC;
+    --track-artist-color: #9C9C9C;
+}
+
+body{
+    background-color: var(--bg-color);
+    padding: 0;
+    margin: 0;
+}
+
+
+nav{
+    text-align: center;
+}
+
+nav li{
+    display: inline;
+    list-style: none;
+    margin: 0px 0.8rem;
+}
+
+nav i{
+    color: var(--nav-icon-color);
+}
+
+main{
+    margin: 0px 8rem;
+}
+
+.search-container{
+    display: flex;
+    justify-content: right;
+    position: relative;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+input[type=text]{
+    border: none;
+    width: 30%;
+    height: 1.5rem;
+    border-radius: 25px;
+    background-color: var(--search-bg);
+    font-size: .6rem;
+    font-family: var(--font-regular);
+    font-weight: bold;
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.search-container i{
+    position: absolute;
+    right: .5rem;
+    top: .3rem;
+    font-size: .8rem;
+}
+
+.result-grid{
+    height: 500px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 23%);
+    grid-auto-rows: 12rem;
+    justify-content: space-between;
+    grid-row-gap: 1rem;
+}
+
+.grid-item{
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.album-art-container{
+    width: 100%;
+    height: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/924faf52097223.590463d34792e.jpg');
+    background-position: center;
+    background-size: cover;*/
+}
+
+.album-art{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.grid-item-detail{
+    margin-top: .8rem;
+    overflow: hidden;
+}
+
+.grid-item h1{
+    line-height: 1px;
+    font-family: var(--font-regular);
+    font-size: .6rem;
+    letter-spacing: 1px;
+    color: var(--track-name-color);
+    white-space: nowrap;
+}
+
+.grid-item h2{
+    line-height: .8rem;
+    font-family: var(--font-regular);
+    font-size: .6rem;
+    letter-spacing: 1px;
+    color: var(--track-artist-color);
+    white-space: nowrap;
+}

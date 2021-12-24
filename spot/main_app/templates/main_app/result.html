@@ -1,0 +1,11 @@
+{% extends "main_app/base.html" %}
+
+{% block content %}
+    <h1>result</h1>
+    <p>{{track_details.0.track_name}}</p>
+    <p>{{track_details.0.track_artist}}</p>
+    <p>{{track_details.0.album_art}}</p>
+    <p>{{track_details.0.preview_url}}</p>
+    <p>{{track_details.0.redirect_url}}</p>
+    <p>{{track_details.1.danceability}}</p>
+{% endblock %}
