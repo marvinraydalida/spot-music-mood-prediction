@@ -17,23 +17,27 @@ body{
 
 nav{
     text-align: center;
+    margin-top: 2rem;
 }
 
 nav li{
     display: inline;
     list-style: none;
-    margin: 0px 0.8rem;
+    margin: 0px 1rem;
 }
+
 
 nav i{
     color: var(--nav-icon-color);
+    font-size: 2rem;
 }
 
 main{
-    margin: 0px 8rem;
+    margin: 0px 20%;
 }
 
 .search-container{
+    height: 2.5rem;
     display: flex;
     justify-content: right;
     position: relative;
@@ -43,17 +47,17 @@ main{
 
 input[type=text]{
     border: none;
-    width: 30%;
-    height: 1.5rem;
+    width: 35%;
+    height: 100%;
     border-radius: 25px;
     background-color: var(--search-bg);
-    font-size: .6rem;
+    font-size: 1rem;
     font-family: var(--font-regular);
     font-weight: bold;
     box-sizing: border-box;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 10px;
+    padding-left: 1rem;
 }
 
 input:focus{
@@ -62,17 +66,17 @@ input:focus{
 
 .search-container i{
     position: absolute;
-    right: .5rem;
-    top: .3rem;
-    font-size: .8rem;
+    right: 1rem;
+    top: .5rem;
+    font-size: 1.3rem;
 }
 
 .result-grid{
     height: 500px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 23%);
-    grid-auto-rows: 12rem;
+    grid-template-columns: repeat(4, 24%);
+    grid-auto-rows: 18rem;
     justify-content: space-between;
     grid-row-gap: 1rem;
 }
@@ -80,45 +84,79 @@ input:focus{
 .grid-item{
     background-color: var(--card-bg);
     border-radius: 5px;
-    padding: 10px;
+    padding: 16px;
     overflow: hidden;
+    transition: transform .2s ease-in-out;
 }
+
+.grid-item:hover{
+    transform: scale(1.03);
+}
+
+@keyframes itemHover {
+    to{
+        transform: scale(1.03,1.03);
+    }
+}
+
 
 .album-art-container{
     width: 100%;
     height: 75%;
     margin-left: auto;
     margin-right: auto;
-    /*background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/924faf52097223.590463d34792e.jpg');
-    background-position: center;
-    background-size: cover;*/
 }
 
 .album-art{
     width: 100%;
     height: 100%;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .grid-item-detail{
-    margin-top: .8rem;
+    position: relative;
+    margin-top: 1.2rem;
     overflow: hidden;
 }
 
-.grid-item h1{
+.grid-item-detail marquee{
+    position: absolute;
+    z-index: -1;
+}
+
+.grid-item-detail h1{
     line-height: 1px;
     font-family: var(--font-regular);
-    font-size: .6rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     color: var(--track-name-color);
     white-space: nowrap;
 }
 
-.grid-item h2{
-    line-height: .8rem;
+.grid-item-detail h2{
+    line-height: 1rem;
     font-family: var(--font-regular);
-    font-size: .6rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     color: var(--track-artist-color);
     white-space: nowrap;
+}
+
+/*.grid-item:hover > .grid-item-detail > h1{
+    animation: slide 8s;
+}*/
+
+@keyframes slide {
+    0%{
+        transform: translateX(0%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideCancel {
+    to{
+        transform: translateX(0%);
+    }
 }

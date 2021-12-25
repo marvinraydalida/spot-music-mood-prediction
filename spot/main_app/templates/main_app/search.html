@@ -14,34 +14,33 @@
         </section>
         <section class = "result-grid">
             {% for track in searched_tracks %}
-            <div class = "grid-item">
+            <div class = "grid-item" id = "{{track.uri}}" onmouseenter="cardHover('{{track.uri}}')" onmouseleave="cardLeave('{{track.uri}}')">
                 <div class = "album-art-container">
                     <img class = "album-art" src="{{track.album_art}}" alt="">
                 </div>
 
                 <div class = "grid-item-detail">
                     <h1>{{track.name}}</h1>
-                <h2>{{track.artist}}</h2>
+                    <h2>{{track.artist}}</h2>
                 </div>
                 
                 <form action="#" method="GET"></form>
             </div>
             {% endfor %}
+
+            <!--<div class = "grid-item" id = "title" onmouseenter="cardHover('title')" onmouseleave="cardLeave('title')">
+                <div class = "album-art-container">
+                    <img class = "album-art" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/924faf52097223.590463d34792e.jpg" alt="">
+                </div>
+
+                <div class = "grid-item-detail">
+                    <h1>Stairway to heaven heaven</h1>
+                    <h2>artist</h2>    
+                </div>
+                
+                <form action="#" method="GET"></form>
+            </div>-->
        
         </section>
     </main>
-
-    <!--<ul>
-        {% for track in searched_tracks %}
-            <li>
-                
-                <form action="/result" method="GET">
-                    {{track.name}} - {{track.artist}}
-                    <input type="hidden" name = 'uri' value="{{track.uri}}">
-                    <input type="submit" value = 'predict'>
-                </form>
-                
-            </li>
-        {% endfor %}
-    </ul>-->
 {% endblock %}
