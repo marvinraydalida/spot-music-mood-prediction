@@ -6,6 +6,7 @@
     --search-bg: #E9E9E9;
     --track-name-color: #ECECEC;
     --track-artist-color: #9C9C9C;
+    --audio-controls-bg: #00BE5E;
 }
 
 body{
@@ -72,7 +73,6 @@ input:focus{
 }
 
 .result-grid{
-    height: 500px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 24%);
@@ -85,18 +85,12 @@ input:focus{
     background-color: var(--card-bg);
     border-radius: 5px;
     padding: 16px;
-    overflow: hidden;
     transition: transform .2s ease-in-out;
+    cursor: pointer;
 }
 
 .grid-item:hover{
     transform: scale(1.03);
-}
-
-@keyframes itemHover {
-    to{
-        transform: scale(1.03,1.03);
-    }
 }
 
 
@@ -119,11 +113,6 @@ input:focus{
     overflow: hidden;
 }
 
-.grid-item-detail marquee{
-    position: absolute;
-    z-index: -1;
-}
-
 .grid-item-detail h1{
     line-height: 1px;
     font-family: var(--font-regular);
@@ -142,21 +131,129 @@ input:focus{
     white-space: nowrap;
 }
 
-/*.grid-item:hover > .grid-item-detail > h1{
-    animation: slide 8s;
-}*/
-
-@keyframes slide {
-    0%{
-        transform: translateX(0%);
-    }
-    50%{
-        transform: translateX(-100%);
-    }
+.main-result{
+    margin: 0px 10%;
+    margin-top: 5%;;
 }
 
-@keyframes slideCancel {
-    to{
-        transform: translateX(0%);
-    }
+.information-grid{
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 29% 65%;
+    grid-auto-rows: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.preview-grid{
+    position: relative;
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    padding: 1.5rem;
+}
+
+.preview-grid #emotion{
+    position: absolute;
+    width: 60%;
+    top:-20%;
+    right:-20%;
+}
+
+.preview-art{
+    height: 60%;
+}
+
+.preview-art img{
+    object-fit: cover;
+}
+
+.controls-container{
+    width: 3rem;
+    height: 3rem;
+    margin-top: 1.8rem;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+#controls{
+    width: 100%;
+    height:100%;
+    background-color: var(--audio-controls-bg);
+    clip-path: polygon(
+    0 0, 
+    50% 25%, 
+    50% 75%, 
+    50% 75%, 
+    50% 25%, 
+    100% 50%, 
+    100% 50%, 
+    0% 100%);
+  }
+
+.preview-item-detail{
+    font-family: var(--font-regular);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--track-name-color);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.preview-item-detail h1{    
+    font-family: var(--font-regular);
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--track-name-color);
+}
+
+.preview-item-detail h2{
+    line-height: 2px;
+    font-family: var(--font-regular);
+    font-size: 1.4rem;
+    letter-spacing: 1px;    
+    text-align: center;
+    color: var(--track-artist-color);
+}
+
+.redirect{
+    text-decoration: none;
+    font-family: var(--font-regular);
+    color: var(--track-artist-color);
+}
+
+.redirect:hover{
+    text-decoration: underline;
+}
+
+.audio-features-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    grid-auto-rows: 25%;
+    grid-row-gap: .5rem;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+
+.audio-feature{
+    font-family: var(--font-regular);
+}
+
+.audio-feature h1{
+    font-size: 2.5rem;
+    color: var(--track-name-color);
+    margin: 0;
+}
+
+.audio-feature h2{
+    font-size: 1.1rem;
+    color: var(--track-artist-color);
+    margin: 0;
+}
+
+.audio-feature i{
+    font-size: .8rem;
 }

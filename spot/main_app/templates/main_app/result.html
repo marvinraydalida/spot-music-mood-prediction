@@ -1,11 +1,86 @@
 {% extends "main_app/base.html" %}
 
 {% block content %}
-    <h1>result</h1>
+    {% load static %}
+    <!--<h1>result</h1>
     <p>{{track_details.0.track_name}}</p>
     <p>{{track_details.0.track_artist}}</p>
     <p>{{track_details.0.album_art}}</p>
     <p>{{track_details.0.preview_url}}</p>
     <p>{{track_details.0.redirect_url}}</p>
-    <p>{{track_details.1.danceability}}</p>
+    <p>{{track_details.1.danceability}}</p>-->
+
+    <main class = "main-result">
+        <section class = "information-grid">
+            <div class = "preview-grid" id = "preview-grid"
+            onmouseenter="previewHover()"
+            onmouseleave="previewLeave()">
+                <img id = "emotion"src="{% static 'main_app/images/Loudly crying face.svg' %}" alt="sad">
+                <div class = "preview-art">
+                    <img class = "album-art" src="{{track_details.0.album_art}}" alt="">
+                </div>
+                <div class = "controls-container" onclick = "controlsClick()">
+                    <div id = "controls" data-status = "paused">
+                  
+                    </div>
+                </div>
+                <div class = "preview-item-detail">
+                    <h1>{{track_details.0.track_name}}</h1>
+                    <h2>{{track_details.0.track_artist}}</h2>
+                </div>
+                <audio id = "audio" src = "{{track_details.0.preview_url}}"> not supported </audio>
+            </div>
+            <div class = "audio-features-grid">
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.danceability}}</h1>
+                    <h2>Danceability <i class="bi bi-question-circle"></i></h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.energy}}</h1>
+                    <h2>Energy</h2>
+                </div>
+                <div class = "audio-feature" id = "key">
+                    <h1>{{track_details.1.key}}</h1>
+                    <h2>Key</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.loudness}}</h1>
+                    <h2>Loudness</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.mode}}</h1>
+                    <h2>Mode</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.speechiness}}</h1>
+                    <h2>Speechiness</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.acousticness}}</h1>
+                    <h2>Acousticness</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.instrumentalness}}</h1>
+                    <h2>Instrumentalness</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.liveness}}</h1>
+                    <h2>Liveness</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.valence}}</h1>
+                    <h2>Valence</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.tempo}}</h1>
+                    <h2>Tempo</h2>
+                </div>
+                <div class = "audio-feature">
+                    <h1>{{track_details.1.time_signature}}</h1>
+                    <h2>Time signiture</h2>
+                </div>
+            </div>
+        </section>
+        <a href="{{track_details.0.redirect_url}}" target="_blank" class = "redirect">Play the entire song on Spotify</a>
+    </main>
 {% endblock %}
