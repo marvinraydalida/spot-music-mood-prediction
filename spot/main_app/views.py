@@ -1,6 +1,7 @@
 from django.http import request
 from django.shortcuts import render
 from modules.spotipyFunctions import search_tracks, get_track
+from modules.sklearnFunctions import predict_track
 
 
 # Create your views here.
@@ -20,4 +21,7 @@ def result_view(requenst):
     content = {'track_details': []}
     print(requenst.GET.get('uri'))
     content['track_details'] = get_track(requenst.GET.get('uri'))
+    prediction = predict_track(content['track_details'][1])
+    content['track_details'].append(prediction[0])
+    ##print(prediction)
     return render(requenst, 'main_app/result.html', content)

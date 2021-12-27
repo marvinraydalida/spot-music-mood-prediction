@@ -15,7 +15,15 @@
             <div class = "preview-grid" id = "preview-grid"
             onmouseenter="previewHover()"
             onmouseleave="previewLeave()">
-                <img id = "emotion"src="{% static 'main_app/images/Loudly crying face.svg' %}" alt="sad">
+                {%if track_details.2 == "sad"%}
+                    <img id = "emotion"src="{% static 'main_app/images/Loudly crying face.svg' %}" alt="sad">
+                {%elif track_details.2 == "energetic"%}
+                    <img id = "emotion"src="{% static 'main_app/images/Partying face.svg' %}" alt="sad">
+                {%elif track_details.2 == "calm"%}
+                    <img id = "emotion"src="{% static 'main_app/images/Relieved face.svg' %}" alt="sad">
+                {%elif track_details.2 == "happy"%}
+                    <img id = "emotion"src="{% static 'main_app/images/Grinning face-1.svg' %}" alt="sad">
+                {%endif%}
                 <div class = "preview-art">
                     <img class = "album-art" src="{{track_details.0.album_art}}" alt="">
                 </div>

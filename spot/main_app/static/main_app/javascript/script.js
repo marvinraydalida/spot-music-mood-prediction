@@ -63,3 +63,4 @@ function previewLeave(){
     gridItemContainer.children[0].style.transform = "translateX(0%)";
     console.log("left");
 }
+
