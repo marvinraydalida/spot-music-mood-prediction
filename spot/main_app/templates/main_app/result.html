@@ -33,51 +33,99 @@
             <div class = "audio-features-grid">
                 <div class = "audio-feature">
                     <h1>{{track_details.1.danceability}}</h1>
-                    <h2>Danceability <i class="bi bi-question-circle"></i></h2>
+                    <h2>Danceability 
+                        <i class="bi bi-question-circle"
+                        data-description = "Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.energy}}</h1>
-                    <h2>Energy</h2>
+                    <h2>Energy 
+                        <i class="bi bi-question-circle"
+                        data-description = "Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature" id = "key">
                     <h1>{{track_details.1.key}}</h1>
-                    <h2>Key</h2>
+                    <h2>Key 
+                        <i class="bi bi-question-circle"
+                        data-description = "The key the track is in. Integers map to pitches using standard Pitch Class notation. E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on. If no key was detected, the value is -1."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.loudness}}</h1>
-                    <h2>Loudness</h2>
+                    <h2>Loudness 
+                        <i class="bi bi-question-circle"
+                        data-description = "The key the track is in. Integers map to pitches using standard Pitch Class notation. E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on. If no key was detected, the value is -1."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.mode}}</h1>
-                    <h2>Mode</h2>
+                    <h2>Mode 
+                        <i class="bi bi-question-circle"
+                        data-description = "Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.speechiness}}</h1>
-                    <h2>Speechiness</h2>
+                    <h2>Speechiness 
+                        <i class="bi bi-question-circle"
+                        data-description = "Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.acousticness}}</h1>
-                    <h2>Acousticness</h2>
+                    <h2>Acousticness 
+                        <i class="bi bi-question-circle"
+                        data-description = "A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.instrumentalness}}</h1>
-                    <h2>Instrumentalness</h2>
+                    <h2>Instrumentalness 
+                        <i class="bi bi-question-circle"
+                        data-description = "Predicts whether a track contains no vocals. &#34;Ooh&#34;	 and &#34;aah&#34; sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly &#34;vocal&#34;. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.liveness}}</h1>
-                    <h2>Liveness</h2>
+                    <h2>Liveness 
+                        <i class="bi bi-question-circle"
+                        data-description = "Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.valence}}</h1>
-                    <h2>Valence</h2>
+                    <h2>Valence 
+                        <i class="bi bi-question-circle"
+                        data-description = "A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry)."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.tempo}}</h1>
-                    <h2>Tempo</h2>
+                    <h2>Tempo 
+                        <i class="bi bi-question-circle"
+                        data-description = "The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration."
+                        ></i>
+                    </h2>
                 </div>
                 <div class = "audio-feature">
                     <h1>{{track_details.1.time_signature}}</h1>
-                    <h2>Time signiture</h2>
+                    <h2>Time signiture 
+                        <i class="bi bi-question-circle"
+                        data-description = "An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of &#34;3/4&#34;, to &#34;7/4&#34;."
+                        ></i>
+                    </h2>
                 </div>
             </div>
         </section>

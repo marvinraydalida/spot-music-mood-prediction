@@ -105,6 +105,7 @@ input:focus{
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .grid-item-detail{
@@ -212,7 +213,7 @@ input:focus{
 .preview-item-detail h2{
     line-height: 2px;
     font-family: var(--font-regular);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;    
     text-align: center;
     color: var(--track-artist-color);
@@ -252,8 +253,30 @@ input:focus{
     font-size: 1.1rem;
     color: var(--track-artist-color);
     margin: 0;
+    position: relative;
 }
 
 .audio-feature i{
     font-size: .8rem;
+}
+
+.audio-feature i::after{
+    position: absolute;
+    content: attr(data-description);
+    background-color: #232323;
+    padding: .5rem;
+    border-radius: 5px;
+    left: 0;
+    top: 2rem;
+    width: 20vw;
+    transform-origin: top left;
+    transform: scale(0);  
+    transition: transform 250ms ease-in-out;
+    z-index: 1;
+    color: rgb(185, 185, 185);
+    font-size: 1rem;
+}
+
+.audio-feature i:hover::after{  
+    transform: scale(1);
 }
