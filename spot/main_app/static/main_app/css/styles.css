@@ -156,13 +156,36 @@ input:focus{
 
 .preview-grid #emotion{
     position: absolute;
-    width: 60%;
-    top:-20%;
-    right:-20%;
+    width: 65%;
+    top:-15%;
+    right:0;
+    transform: translateX(40%);
+}
+
+.preview-grid #emotion:hover ~ .mood-label{
+    transform: translateX(25%) scale(1);
+}
+
+.mood-label{
+    position: absolute;
+    background: rgb(249,34,228);
+    background: linear-gradient(180deg, rgba(249,34,228,1) 0%, rgba(126,0,255,1) 100%);
+    color: white;
+    font-family: var(--font-regular);
+    padding: 1rem;
+    border-radius: 10px;
+    right:0;
+    top: 20%;
+    transform: translateX(25%) scale(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.mood-label h1{
+    margin: 0;
 }
 
 .preview-art{
-    height: 60%;
+    height: 65%;
 }
 
 .preview-art img{
@@ -170,8 +193,8 @@ input:focus{
 }
 
 .controls-container{
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     margin-top: 1.8rem;
     margin-left: auto;
     margin-right: auto;
@@ -191,7 +214,25 @@ input:focus{
     100% 50%, 
     100% 50%, 
     0% 100%);
-  }
+}
+
+.no-preview{
+    font-family: var(--font-regular);
+    color: var(--audio-controls-bg);
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+}
+
+.no-preview i{
+    font-size: 3rem;
+    margin: 0;
+}
+
+.no-preview p{
+    margin: 0;
+    line-height: 0;
+}
 
 .preview-item-detail{
     font-family: var(--font-regular);

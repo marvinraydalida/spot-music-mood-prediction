@@ -24,14 +24,24 @@
                 {%elif track_details.2 == "happy"%}
                     <img id = "emotion"src="{% static 'main_app/images/Grinning face-1.svg' %}" alt="sad">
                 {%endif%}
+                <div class = "mood-label">
+                    <h1>{{track_details.2}}</h1>
+                </div>
                 <div class = "preview-art">
                     <img class = "album-art" src="{{track_details.0.album_art}}" alt="">
                 </div>
+                {%if track_details.0.preview_url != None%}
                 <div class = "controls-container" onclick = "controlsClick()">
                     <div id = "controls" data-status = "paused">
                   
                     </div>
                 </div>
+                {%else%}
+                <div class = "no-preview">
+                    <i class="bi bi-volume-mute-fill"></i>
+                    <p>No Preview <p>
+                </div>
+                {%endif%}
                 <div class = "preview-item-detail">
                     <h1>{{track_details.0.track_name}}</h1>
                     <h2>{{track_details.0.track_artist}}</h2>

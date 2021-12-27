@@ -37,6 +37,11 @@ def get_track(uri):
     track.append(audio_features[0])
     return track
 
+
+def get_top_fifthy():
+    #spotify:playlist:37i9dQZEVXbNBz9cRCSFkY
+    top_fifthy_uri = "spotify:playlist:37i9dQZEVXbNBz9cRCSFkY"
+    tracks = spotify.playlist_tracks(playlist_id = top_fifthy_uri)
 # print(track['id'])
 # print(track['name'])
 # print(track['album']['artists'][0]['name'])

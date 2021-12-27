@@ -9,7 +9,10 @@ def home_view(request):
     return render(request, 'main_app/home.html')
 
 def search_view(request):
-    content = {'searched_tracks': []}   
+    content = {
+        'searched_tracks': [],
+        'top_fifthy': []
+    }   
     if request.method == 'POST':
         print(request.POST.get("search"))
         #print(search_tracks(request.POST.get("search")))
