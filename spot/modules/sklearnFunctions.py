@@ -25,7 +25,6 @@ def predict_track(audio_features):
 
     gradient_boost_model = GradientBoostingClassifier()
     gradient_boost_model.fit(X,y)
-    
     track_af = pd.json_normalize(audio_features)
     X_pred = track_af[feature_cols]
 

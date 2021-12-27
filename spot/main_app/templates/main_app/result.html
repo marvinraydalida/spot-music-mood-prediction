@@ -18,11 +18,11 @@
                 {%if track_details.2 == "sad"%}
                     <img id = "emotion"src="{% static 'main_app/images/Loudly crying face.svg' %}" alt="sad">
                 {%elif track_details.2 == "energetic"%}
-                    <img id = "emotion"src="{% static 'main_app/images/Partying face.svg' %}" alt="sad">
+                    <img id = "emotion"src="{% static 'main_app/images/Partying face.svg' %}" alt="energetic">
                 {%elif track_details.2 == "calm"%}
-                    <img id = "emotion"src="{% static 'main_app/images/Relieved face.svg' %}" alt="sad">
+                    <img id = "emotion"src="{% static 'main_app/images/Relieved face.svg' %}" alt="calm">
                 {%elif track_details.2 == "happy"%}
-                    <img id = "emotion"src="{% static 'main_app/images/Grinning face-1.svg' %}" alt="sad">
+                    <img id = "emotion"src="{% static 'main_app/images/Grinning face-1.svg' %}" alt="happy">
                 {%endif%}
                 <div class = "mood-label">
                     <h1>{{track_details.2}}</h1>
@@ -32,9 +32,7 @@
                 </div>
                 {%if track_details.0.preview_url != None%}
                 <div class = "controls-container" onclick = "controlsClick()">
-                    <div id = "controls" data-status = "paused">
-                  
-                    </div>
+                    <div id = "controls" data-status = "paused"></div>
                 </div>
                 {%else%}
                 <div class = "no-preview">

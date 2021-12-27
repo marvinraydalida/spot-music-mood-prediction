@@ -45,7 +45,7 @@ function controlsClick(){
 
 function previewHover(){
     const card = document.getElementById("preview-grid");
-    gridItemContainer = card.children[3];
+    gridItemContainer = card.children[4];
     let offset = gridItemContainer.children[0].offsetWidth;
     let scroll = gridItemContainer.children[0].scrollWidth;
     if(scroll > offset){
@@ -58,7 +58,7 @@ function previewHover(){
 
 function previewLeave(){
     const card = document.getElementById("preview-grid");
-    gridItemContainer = card.children[3];
+    gridItemContainer = card.children[4];
     gridItemContainer.children[0].style.transition = "transform 2s ease-out";
     gridItemContainer.children[0].style.transform = "translateX(0%)";
     console.log("left");
