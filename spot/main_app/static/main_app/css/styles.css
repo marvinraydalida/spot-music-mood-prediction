@@ -7,6 +7,8 @@
     --track-name-color: #ECECEC;
     --track-artist-color: #9C9C9C;
     --audio-controls-bg: #00BE5E;
+    --description-color: #bfbfbf; 
+    --contrast-color: #0056A6;
 }
 
 body{
@@ -31,6 +33,135 @@ nav li{
 nav i{
     color: var(--nav-icon-color);
     font-size: 2rem;
+}
+
+header{
+    text-align: center;
+    font-family: var(--font-regular);
+    height: 100vh;
+    padding-top: 2rem;
+}
+
+header h1{
+    font-size: 144px;
+    color: #00BE5E;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+header span{
+    font-size: 72px;
+    color: #848484;
+}
+
+header h2{
+    font-size: 48px;
+    color: var(--description-color);
+    margin-top: 2rem;
+}
+
+.emoji-container{
+    margin-top: 5rem;
+}
+
+.emoji-container img{
+    width: 200px;
+    margin: 0px 1rem;
+}
+
+.about-spot{
+    height: 100vh;
+    margin: 0 20%;
+}
+
+.spot-detail{
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sample-album{
+    position: relative;
+    width: 347px;
+    height: 347px;
+    background-color: black;
+}
+
+.sample-album img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#sample-emotion{
+    width: 60%;
+    height: 60%;
+    right: 0;
+    bottom: -20%;
+    transform: translateX(40%);
+    position: absolute;
+}
+
+.about-detail{
+    box-sizing: border-box;
+    width: 50%;
+    padding: 2rem;
+}
+
+.about-detail h1{
+    font-family: var(--font-regular);
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    color: var(--description-color);
+}
+
+.redirect-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 8%;
+    font-family: var(--font-regular);
+}
+
+.redirect-links div{
+    box-sizing: border-box;
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    display: table;
+    margin: 0px 2rem;
+    border-radius: 50px;
+    transition: transform 250ms ease-in-out;
+}
+
+.redirect-links a{
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.redirect-search{
+    background-color: var(--nav-icon-color);
+}
+
+.redirect-search:hover{
+    transform: scale(1.1);
+}
+
+.redirect-article{
+    background-color: var(--contrast-color);
+}
+
+.redirect-article:hover{
+    transform: scale(1.1);
 }
 
 main{
