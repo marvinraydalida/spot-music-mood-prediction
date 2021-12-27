@@ -40,10 +40,22 @@ def get_track(uri):
 
 def get_top_fifthy():
     #spotify:playlist:37i9dQZEVXbNBz9cRCSFkY
+    tracks = []
     top_fifthy_uri = "spotify:playlist:37i9dQZEVXbNBz9cRCSFkY"
-    tracks = spotify.playlist_tracks(playlist_id = top_fifthy_uri)
-# print(track['id'])
-# print(track['name'])
-# print(track['album']['artists'][0]['name'])
-# print(track['album']['images'][0]['url'])
-# print(track['preview_url'])
+    top_track = spotify.playlist_tracks(playlist_id = top_fifthy_uri, market= 'PH')
+    for item in top_track['items']:
+        tmp = {
+            'name': item['track']['name'],
+            'album_art': item['track']['album']['images'][0]['url'],
+            'artist': item['track']['album']['artists'][0]['name'],
+            'id': item['track']['id'],
+            'uri': item['track']['uri']
+        }
+        tracks.append(tmp)
+    return tracks
+
+# print(result['items'][0]['track']['id'])
+# print(result['items'][0]['track']['name'])
+# print(result['items'][0]['track']['album']['artists'][0]['name'])
+# print(result['items'][0]['track']['album']['images'][0]['url'])
+# print(result['items'][0]['track']['uri'])
