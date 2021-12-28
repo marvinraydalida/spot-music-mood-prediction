@@ -1,3 +1,17 @@
+window.onload = function() {
+    const emoji = document.getElementById("emoji-container");
+	
+    for(let i = 0; i < 4; i++){
+  	    setTimeout(function(){
+            if(i == 0)
+			    emoji.children[i].style.transition = "transform 500ms ease-in-out 0s";
+            else
+            emoji.children[i].style.transition = "transform 500ms ease-in-out  "+i/2+"s";
+    	    emoji.children[i].style.transform = "scale(1)";
+        },1000);
+    }
+}
+
 function cardHover(title){
     const card = document.getElementById(title);
     gridItemContainer = card.children[1];
