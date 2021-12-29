@@ -78,3 +78,7 @@ function previewLeave(){
     console.log("left");
 }
 
+function accordion(id){
+	const item = document.getElementById(id);
+    item.classList.toggle("active");
+}
