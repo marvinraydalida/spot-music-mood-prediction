@@ -509,12 +509,13 @@ input:focus{
 .accordion-label h1{
     display: inline-block;
     margin-left: 20px;
+    font-size: 5vw;
 }
 
 .accordion-label i{
     display: inline-block;
     position: absolute;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--track-artist-color);
     top:50%;
     right: 25px;
@@ -552,7 +553,52 @@ input:focus{
     color: var(--track-artist-color);
 }
 
+@media (max-width: 1440px){
+    
+    header h1{
+        font-size: 8rem;
+    }
+    
+    header span{
+        font-size: 4rem;
+    }
+
+    header h2{
+        font-size: 3vw;
+    }
+    
+    .emoji-container{
+        margin-top: 3rem;
+    }
+    
+    .emoji-container img{
+        width: 12rem;
+    }
+}
+
 @media (max-width: 1024px) {
+    
+    .emoji-container img{
+        width: 10rem;
+    }
+    
+    .about-spot{
+        margin: 0 10%;
+    }
+    
+    .sample-album{
+        width: 20rem;
+        height: 20rem;
+    }
+    
+    .about-detail{
+        padding: 3rem;
+    }
+    
+    .about-detail h1{
+        font-size: 1.4rem;
+    }
+
     .result-grid{
         grid-auto-rows: 30vh;
     }
@@ -569,6 +615,22 @@ input:focus{
         height: 70%;
     }
 
+    .preview-grid{
+        padding: 1rem;
+    }
+
+    .controls-container{
+        margin-top: 1.3rem;
+    }
+
+    .no-preview i{
+        font-size: 2.3rem;
+    }
+    
+    .no-preview p{
+        line-height: 0;
+    }
+
     .audio-features-grid{
         width: 60%;
     }
@@ -580,6 +642,43 @@ input:focus{
  }
 
  @media (max-width: 768px) {
+
+    .emoji-container{
+        margin-top: 5rem;
+    }
+
+    .emoji-container img{
+        width: 8rem;
+    }
+    
+    .about-spot{
+        height: 100vh;
+        margin: 0 10%;
+    }
+    
+    .sample-album{
+        width: 15rem;
+        height: 15rem;
+    }
+    
+    
+    .about-detail{
+        padding: 3rem;
+    }
+    
+    .about-detail h1{
+        font-size: 1rem;
+    }
+    
+    .redirect-links{
+        height: 8%;
+    }
+    
+    
+    .redirect-links a{
+        font-size: 1rem;
+    }
+    
 
     input[type=text]{
         width: 100%;
@@ -602,13 +701,115 @@ input:focus{
     .main-result{
         margin-top: 15%;
     }
+
+    .preview-grid{
+        padding: .7rem;
+    }
+
+    .controls-container{
+        margin-top: .8rem;
+    }
+
+    .no-preview i{
+        font-size: 2rem;
+    }
+    
+    .no-preview p{
+        font-size: .5rem;
+    }
+
+    .preview-item-detail{
+        margin-top: .4rem;
+    }
+
+    .preview-item-detail h1{    
+        font-size: 1.5vw;
+        letter-spacing: 2px;
+        line-height: 0px;
+    }
+    
+    .preview-item-detail h2{
+        line-height: 1rem;
+        font-size: 1vw;  
+    }
  }
 
  @media (max-width: 425px) {
 
+    nav ul{
+        padding: 0px;
+    }
+
     nav i::after{
         font-size: .5rem;
-        padding: 10px;
+        padding: 8px;
+        top: 150%;
+        left: 0;
+        transform: translateX(-6%) scale(0);
+    }
+
+    nav i:hover::after{
+        transform: translateX(-6%) scale(1);
+    }
+
+
+    header h1{
+        font-size: 5rem;
+    }
+    
+    header span{
+        font-size: 2rem;
+    }
+
+    header h2{
+        font-size: 5vw;
+    }
+
+    .emoji-container{
+        margin-top: 4rem;
+    }
+    
+    .about-spot{
+        height: 100vh;
+        margin: 0 10%;
+    }
+
+    .spot-detail{
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .sample-album{
+        width: 15rem;
+        height: 15rem;
+    }
+    
+    
+    .about-detail{
+        padding: 0px;
+        width: 90%;
+    }
+    
+    .about-detail h1{
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .redirect-links{
+        height: 8%;
+    }
+
+    .redirect-links div{
+        width: 50%;
+        margin: 0px 1rem;
+    }
+    
+    
+    .redirect-links a{
+        font-size: 1rem;
     }
 
     main{
@@ -666,14 +867,6 @@ input:focus{
         display: none;
     }
     
-    .preview-grid #emotion:hover ~ .mood-label{
-        transform: translateX(25%) scale(0);
-    }
-    
-    .mood-label h1{
-        margin: 0;
-    }
-    
     .preview-art{
         height: 75%;
     }
@@ -693,46 +886,20 @@ input:focus{
         cursor: pointer;
     }
     
-    #controls{
-        width: 100%;
-        height:100%;
-        background-color: var(--audio-controls-bg);
-        clip-path: polygon(
-        0 0, 
-        50% 25%, 
-        50% 75%, 
-        50% 75%, 
-        50% 25%, 
-        100% 50%, 
-        100% 50%, 
-        0% 100%);
-    }
-    
-    .no-preview{
-        font-family: var(--font-regular);
-        color: var(--audio-controls-bg);
-        width: 100%;
-        text-align: center;
-        padding: 2px;
-    }
     
     .no-preview i{
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin: 0;
     }
     
     .no-preview p{
+        font-size: 1rem;
         margin: 0;
         line-height: 0;
     }
     
     .preview-item-detail{
-        font-family: var(--font-regular);
-        letter-spacing: 1px;
-        color: var(--track-name-color);
-        white-space: nowrap;
-        overflow: hidden;
-        margin-top: .5rem;
+        margin-top: .8rem;
     }
     
     .preview-item-detail h1{    
@@ -745,9 +912,9 @@ input:focus{
     }
     
     .preview-item-detail h2{
-        line-height: .8rem;
+        line-height: 1.2rem;
         font-family: var(--font-regular);
-        font-size: 3vw;
+        font-size: 3.5vw;
         letter-spacing: 1px;    
         text-align: center;
         color: var(--track-artist-color);
@@ -812,10 +979,85 @@ input:focus{
     .grid-item-detail h2{
         font-size: 3vw;
     }
+
+    .main-result{
+        margin-left: auto;
+        margin-right: auto;
+        width: 80vw;
+    }
+
+    .information-grid{
+        margin-top: 3.5rem;
+    }
+
+    .preview-grid{
+        height: 70vh;
+    }
+
+    .preview-art{
+        height: 70%;
+    }
     
+    .controls-container{
+        width: 12%;
+        height: 8%;
+        margin-top: 1.7rem;
+    }
+
+    .no-preview{
+        margin-top: .5rem;
+    }
+
+    .accordion-label{
+        padding: 2px;
+    }
+    
+    .accordion-label h1{
+        font-size: 1.3rem;
+    }
+
+    .accordion-label i{
+        font-size: 1rem;
+    }
  }
 
  @media (max-width: 320px) {
+
+    header h1{
+        font-size: 4rem;
+        letter-spacing: 0;
+    }
+    
+    header span{
+        font-size: 2rem;
+    }
+
+    header h2{
+        font-size: 5vw;
+    }
+
+    .emoji-container img{
+        width: 30vw;
+    }
+    
+    .about-spot{
+        height: 100vh;
+        margin: 0 10%;
+    }
+    
+    .sample-album{
+        width: 13rem;
+        height: 13rem;
+    }
+    
+    .redirect-links{
+        height: 7%;
+    }
+
+    
+    .redirect-links a{
+        font-size: .8rem;
+    }
 
     .result-grid{
         grid-auto-rows: 30vh;
@@ -825,4 +1067,31 @@ input:focus{
         margin-top: 1vh;
     }
 
+    .main-result{
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+    }
+
+    .preview-grid{
+        height: 65vh;
+    }
+
+    .preview-art{
+        height: 70%;
+    }
+    
+    .controls-container{
+        width: 12%;
+        height: 8%;
+        margin-top: 1.7rem;
+    }
+
+    .accordion-label{
+        padding: 2px;
+    }
+    
+    .accordion-label h1{
+        font-size: 1.1rem;
+    }
  }
