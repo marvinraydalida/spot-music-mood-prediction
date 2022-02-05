@@ -1,13 +1,11 @@
 from typing import AsyncIterable
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
-
+from sklearn.linear_model import LogisticRegression
 
 def predict_track(audio_features):
     
-    #data = pd.read_csv('./audio_features_dataset.csv')
 
-    data = pd.read_csv('./audio_features_dataset.csv')
+    data = pd.read_csv('./audio_features_v5.csv')
 
     feature_cols = [
         'danceability',
@@ -29,14 +27,9 @@ def predict_track(audio_features):
     y = data.mood_string
 
     
-    #gradient_boost_model = GradientBoostingClassifier()
-    #gradient_boost_model.fit(X,y)
-
-    randomForestClassifier = RandomForestClassifier()
-    randomForestClassifier.fit(X,y)
+    model = LogisticRegression(max_iter=10000, penalty='l2')
+    model.fit(X,y)
     track_af = pd.json_normalize(audio_features)
     X_pred = track_af[feature_cols]
 
-    #return gradient_boost_model.predict(X_pred)
-
-    return randomForestClassifier.predict(X_pred)
+    return model.predict(X_pred)
