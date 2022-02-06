@@ -9,7 +9,7 @@ spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
 def search_tracks(q):
     searched_track = []
-    search = spotify.search(q=q, limit = 50, type = 'track')
+    search = spotify.search(q=q, limit = 50, type = 'track', market='PH')
     for item in search['tracks']['items']:
         tmp = {
             'name': item['name'],
