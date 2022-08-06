@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-2goyz_263pah6bwlsg*%bb1ms!g3=l3lzu#%#tb(zn((c8rin7
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','trackspot.herokuapp.com']
-
+#'127.0.0.1','trackspot-v1.herokuapp.com'
 
 # Application definition
 
@@ -117,6 +117,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
